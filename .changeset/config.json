@@ -4,7 +4,7 @@
   "commit": false,
   "fixed": [],
   "linked": [["@mattoliver-dev/package-a", "@mattoliver-dev/package-b"]],
-  "access": "public",
+  "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": []
