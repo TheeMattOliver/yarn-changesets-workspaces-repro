@@ -22,6 +22,33 @@ jobs:
         with:
           node-version: 16.x
 
+     - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+          init.author.name=Matt Oliver
+          init.author.url=https://mattoliver.xyz
+          init.author.email=mattoliver.mattoliver@gmail.com
+          email=mattoliver.mattoliver@gmail.com
+          registry=https://registry.npmjs.org
+          always-auth=true
+          //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Use cached node_modules 
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('../yarn.lock') }}
+          restore-keys: |
+            nodeModules-
+      
+      - name: Create .yarnrc.yml
+        run: |
+          cat << EOF > "$HOME/.yarnrc.yml"
+          EOF
+
       - name: Install Dependencies
         run: yarn
 
