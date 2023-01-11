@@ -11,16 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
         with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
       - name: Setup Node.js 16.x
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
           node-version: 16.x
 
-     - name: Create .npmrc
+      - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
           init.author.name=Matt Oliver
@@ -34,29 +35,25 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Use cached node_modules 
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: nodeModules-${{ hashFiles('../yarn.lock') }}
-          restore-keys: |
-            nodeModules-
-      
-      - name: Create .yarnrc.yml
-        run: |
-          cat << EOF > "$HOME/.yarnrc.yml"
-          EOF
-
       - name: Install Dependencies
-        run: yarn
+        run: npm config set registry https://registry.npmjs.org &&
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN &&
+          npm config set email mattoliver.mattoliver@gmail.com &&
+          npm config set _auth $NPM_TOKEN &&
+          npm config set always-auth true &&
+          yarn --update-checksums
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Transform
+        run: yarn transform
+
+      - name: Build tokens
+        run: yarn build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          setupGitUser: true
-          # Version PRs will fail unless the version is updated since automation systems rely on package=lock changes to use the install cache or not, see https://github.com/changesets/changesets/issues/421
-          version: yarn changeset:version
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: yarn release
         env:
