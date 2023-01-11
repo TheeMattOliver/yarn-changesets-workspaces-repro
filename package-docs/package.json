@@ -4,10 +4,14 @@
   "version": "0.0.1",
   "license": "0BSD",
   "scripts": {
-    "build": "yarn workspace example build"
+    "build": "yarn workspace docs build",
+    "release": "cd theme && yarn release"
   },
   "workspaces": [
     "docs",
     "theme"
-  ]
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.26.0"
+  }
 }

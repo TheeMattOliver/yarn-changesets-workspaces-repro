@@ -8,5 +8,13 @@
   "packageManager": "yarn@3.3.1",
   "dependencies": {
     "@changesets/cli": "^2.26.0"
+  },
+  "scripts": {
+    "changeset:version": "yarn changeset version && yarn install && git add .",
+    "version": "cd package-a && yarn version",
+    "release": "yarn release:package-a && yarn release:package-b && yarn release:package-docs",
+    "release:package-a": "cd package-a && yarn release",
+    "release:package-b": "cd package-b && yarn release",
+    "release:package-docs": "cd package-docs && yarn release"
   }
 }
