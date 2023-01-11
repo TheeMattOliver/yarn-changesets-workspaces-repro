@@ -6,3 +6,5 @@ const PROJECT = {
 export function getSiteInfo() {
   return { title: PROJECT.title, subtitle: PROJECT.subtitle };
 }
+
+// WIP
