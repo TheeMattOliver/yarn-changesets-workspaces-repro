@@ -3,7 +3,7 @@
   "workspaces": [
     "package-a",
     "package-b",
-    "package-docs/theme"
+    "package-docs"
   ],
   "packageManager": "yarn@3.3.1",
   "dependencies": {
