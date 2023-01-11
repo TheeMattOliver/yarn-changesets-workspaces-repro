@@ -1,0 +1,16 @@
+{
+  "private": "true",
+  "name": "docs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "@mattoliver-dev/gatsby-theme-test": "*",
+    "gatsby": "^5.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

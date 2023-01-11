@@ -1,0 +1,10 @@
+{
+  "name": "@mattoliver-dev/package-b",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Matt Oliver",
+  "license": "MIT",
+  "dependencies": {
+    "@mattoliver-dev/package-a": "*"
+  }
+}
