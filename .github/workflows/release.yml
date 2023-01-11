@@ -45,8 +45,8 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build
-        run: yarn build
+      # - name: Build
+      #   run: yarn build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
