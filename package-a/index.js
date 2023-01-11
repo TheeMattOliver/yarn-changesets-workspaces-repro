@@ -7,4 +7,4 @@ export function getSiteInfo() {
   return { title: PROJECT.title, subtitle: PROJECT.subtitle };
 }
 
-console.log("this represents a feature change on package a");
+console.log("this represents a build script on package a");

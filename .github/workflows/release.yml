@@ -27,6 +27,9 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
+          setupGitUser: true
+          # Version PRs will fail unless the version is updated since automation systems rely on package=lock changes to use the install cache or not, see https://github.com/changesets/changesets/issues/421
+          version: yarn changeset:version
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: yarn release
         env:
