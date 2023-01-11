@@ -2,4 +2,4 @@
 "@mattoliver-dev/gatsby-theme-test": patch
 ---
 
-patch for theme
+testing the patch on the nested theme package
