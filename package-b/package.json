@@ -11,6 +11,6 @@
   },
   "scripts": {
     "build": "node index.js",
-    "release": "yarn buid && changeset publish"
+    "release": "yarn build && changeset publish"
   }
 }
