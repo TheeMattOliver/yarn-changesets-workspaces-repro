@@ -4,6 +4,8 @@ on:
   push:
     branches-ignore:
       - $default-branch
+      - "main"
+      - "changeset-set-release/**"
 jobs:
   ci:
     name: CI
