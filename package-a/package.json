@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "Matt Oliver",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "node index.js",
     "release": "yarn build && changeset publish"
