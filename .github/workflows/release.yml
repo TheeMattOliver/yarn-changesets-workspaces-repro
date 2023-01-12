@@ -26,10 +26,6 @@ jobs:
       - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
-          init.author.name=Matt Oliver
-          init.author.url=https://mattoliver.xyz
-          init.author.email=mattoliver.mattoliver@gmail.com
-          email=mattoliver.mattoliver@gmail.com
           registry=https://registry.npmjs.org
           always-auth=true
           //registry.npmjs.org/:_authToken=$NPM_TOKEN
@@ -40,7 +36,6 @@ jobs:
       - name: Install Dependencies
         run: npm config set registry https://registry.npmjs.org &&
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN &&
-          npm config set email mattoliver.mattoliver@gmail.com &&
           npm config set _auth $NPM_TOKEN &&
           npm config set always-auth true &&
           yarn
