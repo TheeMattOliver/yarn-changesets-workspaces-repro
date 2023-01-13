@@ -10,7 +10,7 @@
     "release": "yarn build && changeset publish"
   },
   "workspaces": [
-    "docs"
+    "package-a-docs"
   ],
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
