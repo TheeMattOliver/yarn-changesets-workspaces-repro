@@ -1,6 +1,6 @@
 {
   "name": "@mattoliver-dev/package-b",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "index.js",
   "author": "Matt Oliver",
   "license": "MIT",
