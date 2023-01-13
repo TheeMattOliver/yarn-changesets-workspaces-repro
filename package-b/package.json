@@ -12,5 +12,8 @@
   "scripts": {
     "build": "node index.js",
     "release": "yarn build && changeset publish"
-  }
+  },
+  "workspaces": [
+    "package-b-docs"
+  ]
 }

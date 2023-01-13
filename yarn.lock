@@ -5793,17 +5793,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docs@workspace:package-a/docs":
-  version: 0.0.0-use.local
-  resolution: "docs@workspace:package-a/docs"
-  dependencies:
-    "@mattoliver-dev/gatsby-theme-test": "workspace:^"
-    gatsby: ^5.0.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  languageName: unknown
-  linkType: soft
-
 "doctrine@npm:^2.1.0":
   version: 2.1.0
   resolution: "doctrine@npm:2.1.0"
@@ -10073,7 +10062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.6.7, node-fetch@npm:^2.5.0, node-fetch@npm:^2.6.7":
+"node-fetch@npm:2.6.7, node-fetch@npm:^2.5.0":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
@@ -10084,6 +10073,20 @@ __metadata:
     encoding:
       optional: true
   checksum: 8d816ffd1ee22cab8301c7756ef04f3437f18dace86a1dae22cf81db8ef29c0bf6655f3215cb0cdb22b420b6fe141e64b26905e7f33f9377a7fa59135ea3e10b
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^2.6.7":
+  version: 2.6.8
+  resolution: "node-fetch@npm:2.6.8"
+  dependencies:
+    whatwg-url: ^5.0.0
+  peerDependencies:
+    encoding: ^0.1.0
+  peerDependenciesMeta:
+    encoding:
+      optional: true
+  checksum: 91f57be68e29f9b1382750693619e199733a6936998e6d618f1aa779853ad8fc4a2facf170db7957bf1d2510bad33449edf74b5802713d81b63de5986fa3be00
   languageName: node
   linkType: hard
 
@@ -10572,6 +10575,23 @@ __metadata:
   checksum: f8a8e9a7693659383f06aec604ad5ead237c7a261c18048a6e1b5b85a5f8a067e469aa24f5bc009b991ea3b058a87f5065ef4176793a200d4917349881216cae
   languageName: node
   linkType: hard
+
+"package-a-docs@workspace:package-a/package-a-docs":
+  version: 0.0.0-use.local
+  resolution: "package-a-docs@workspace:package-a/package-a-docs"
+  dependencies:
+    "@mattoliver-dev/gatsby-theme-test": "workspace:^"
+    gatsby: ^5.0.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  languageName: unknown
+  linkType: soft
+
+"package-b-docs@workspace:package-b/package-b-docs":
+  version: 0.0.0-use.local
+  resolution: "package-b-docs@workspace:package-b/package-b-docs"
+  languageName: unknown
+  linkType: soft
 
 "package-json@npm:^8.1.0":
   version: 8.1.0

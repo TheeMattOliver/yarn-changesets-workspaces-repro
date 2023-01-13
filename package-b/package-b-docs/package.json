@@ -1,0 +1,5 @@
+{
+  "name": "package-b-docs",
+  "private": true,
+  "packageManager": "yarn@3.3.1"
+}
